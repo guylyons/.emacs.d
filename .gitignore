@@ -1,0 +1,13 @@
+# ignore everything
+*
+
+# except for elisp files
+!README.md
+!init.el
+!javascript.el
+!keybindings.el
+!personal.el
+!webstart.el
+!orgmode.el
+!snippets
+!.gitignore
