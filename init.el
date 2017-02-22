@@ -1,5 +1,5 @@
-;; Load MELPA (STABLE)
-(require 'package) ;; You might already have this line
+;; Load MELPA STABLE)
+(require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
 (when (< emacs-major-version 24)
@@ -11,7 +11,7 @@
 (add-to-list 'load-path "~/.emacs.d/lisp/helm/")
 
 ;; don't use tabs
-;; (setq-default indent-tabs-mode nil)
+(setq-default indent-tabs-mode nil)
 
 (defconst user-init-dir
   (cond ((boundp 'user-emacs-directory)
@@ -20,6 +20,7 @@
          user-init-directory)
         (t "~/.emacs.d/")))
 
+;; Python Settings
 (elpy-enable)
 (require 'ob-python)
 (require 're-builder)
@@ -33,7 +34,7 @@
 (setenv "LANG" "en_US.UTF-8")
 
 ;; Ruby Indent Level
-(setq ruby-indent-level 4)
+(setq ruby-indent-level 2)
 
 (add-hook 'term-mode-hook (lambda()
                 (yas-minor-mode -1)))
@@ -43,8 +44,6 @@
 (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 (yas-global-mode t)
 
-;; i don't know
-;; some settings i like
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -130,7 +129,6 @@
 
 (global-hl-line-mode 1)
 (syntactic-close 1)
-(global-git-gutter-mode 1)
 
 ;; highlight symbol mode
 (require 'highlight-symbol)
@@ -171,7 +169,7 @@
 ;; magit prevent startup message
 (setq magit-last-seen-setup-instructions "1.4.0")
 
-;; c programming
+;; c
 (require 'cc-mode)
 (define-key c-mode-base-map (kbd "C-x c") 'compile)
 
@@ -185,8 +183,8 @@
 (global-set-key (kbd "C-x T") 'sane-term-create)
 (global-set-key (kbd "C-x t") 'sane-term)
 
-;; (require 'auto-complete-config)
-;; (require 'auto-complete)
+(require 'auto-complete-config)
+(require 'auto-complete)
 (require 'dired+)
 (require 'sane-term)
 
@@ -210,8 +208,8 @@
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
 ;; (add-hook 'sgml-mode-hook 'auto-complete)
 
-;; (require 'smart-tab)
-;; (global-smart-tab-mode 1)
+(require 'smart-tab)
+(global-smart-tab-mode 1)
 
 (defun add-emmet-expand-to-smart-tab-completions ()
   ;; Add an entry for current major mode in

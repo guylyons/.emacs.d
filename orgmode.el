@@ -1,9 +1,13 @@
 ;; Org Mode stuff
+
 (add-hook 'org-journal-mode-hook 'org-mode)
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
+
+;; Key bindings
 (define-key global-map "\C-ca" 'org-agenda)
 (define-key global-map "\C-cc" 'org-capture)
 (define-key global-map "\C-cl" 'org-store-link)
+
 (org-clock-persistence-insinuate)
 (require 'org)
 (setq org-agenda-files (list "~/org/" "~/org/journal/"))
