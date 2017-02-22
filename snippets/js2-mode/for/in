@@ -1,0 +1,8 @@
+# -*- mode: snippet; require-final-newline: nil -*-
+# name: for/in
+# key: forin
+# binding: direct-keybinding
+# --
+for (var ${1:key} in ${2:variable}) {
+    ${3:action}
+}
