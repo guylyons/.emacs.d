@@ -183,8 +183,8 @@
 (global-set-key (kbd "C-x T") 'sane-term-create)
 (global-set-key (kbd "C-x t") 'sane-term)
 
-(require 'auto-complete-config)
-(require 'auto-complete)
+;;(require 'auto-complete-config)
+;;(require 'auto-complete)
 (require 'dired+)
 (require 'sane-term)
 
@@ -207,9 +207,6 @@
 
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
 ;; (add-hook 'sgml-mode-hook 'auto-complete)
-
-(require 'smart-tab)
-(global-smart-tab-mode 1)
 
 (defun add-emmet-expand-to-smart-tab-completions ()
   ;; Add an entry for current major mode in
