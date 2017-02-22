@@ -1,5 +1,5 @@
 # ignore everything
-*
+/*
 
 # except for elisp files
 !README.md
@@ -10,4 +10,5 @@
 !webstart.el
 !orgmode.el
 !.gitignore
+!snippets/
 !snippets/*
