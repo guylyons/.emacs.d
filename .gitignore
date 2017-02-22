@@ -9,5 +9,5 @@
 !personal.el
 !webstart.el
 !orgmode.el
-!snippets
 !.gitignore
+!snippets/*
