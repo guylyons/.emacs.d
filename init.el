@@ -80,6 +80,7 @@
  '(erc-track-mode t)
  '(erc-track-position-in-mode-line t t)
  '(erc-user-full-name "adslkjfad;slkjflkj, asdf?")
+ '(js-indent-level 2)
  '(magit-diff-use-overlays nil)
  '(nrepl-message-colors
    (quote
