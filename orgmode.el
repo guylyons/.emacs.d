@@ -1,5 +1,4 @@
-;; Org Mode stuff
-
+;; Org Mode
 (add-hook 'org-journal-mode-hook 'org-mode)
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
 
@@ -29,5 +28,6 @@
 	("CANCELED" . (:foreground "white" :background "#4d4d4d" :weight bold))
 	("DELEGATED" . "pink")
 	("POSTPONED" . "#008080")))
+
 ;; keybindings for password manager
 (add-hook 'org-mode-hook 'org-password-manager-key-bindings)

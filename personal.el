@@ -49,9 +49,6 @@
 (require 'yasnippet)
 ;;(yas-global-mode 1)
 
-;; disabled for now
-;;(global-visual-line-mode 1) ;; always use visual line wrap
-
 ;; emacs title bar formatting
 (setq frame-title-format '("" "[ %b ] %m-mode emacs " emacs-version))
 

@@ -1,4 +1,3 @@
-;; Load MELPA STABLE)
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
@@ -10,7 +9,6 @@
 (add-to-list 'load-path "~/.emacs.d/elpa/async-20150203.2127")
 (add-to-list 'load-path "~/.emacs.d/lisp/helm/")
 
-;; don't use tabs
 (setq-default indent-tabs-mode nil)
 
 (defconst user-init-dir
@@ -257,7 +255,6 @@
 (require 'web-mode)
 (require 'autopair)
 
-
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -267,7 +264,6 @@
  '(swiper-minibuffer-match-face-2 ((t :background "#bbbbbb" :weight bold)))
  '(swiper-minibuffer-match-face-3 ((t :background "#bbbbff" :weight bold)))
  '(swiper-minibuffer-match-face-4 ((t :background "#ffbbff" :weight bold))))
-
 
 (add-to-list 'default-frame-alist '(font . "Source Code Pro-14" ))
 (set-face-attribute 'default t :font "Source Code Pro-14")
