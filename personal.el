@@ -1,6 +1,7 @@
 ;; Personel.el
 ;; Custom settings and keybindings
 
+(global-set-key (kbd "C-j") 'emmet-expand-line)
 ;; make Projectile global
 (projectile-global-mode)
 
