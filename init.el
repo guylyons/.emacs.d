@@ -1,16 +1,24 @@
+;; init.el
+;; ------------------------------
+;; Author: gl
+;; Email: guylyons@protonmail.com
+;; ------------------------------
+;;
+
 (require 'package)
 (add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/"))
 (when (< emacs-major-version 24)
-  ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
-(package-initialize) ;; You might already have this line
+(package-initialize)
 
 (add-to-list 'load-path "~/.emacs.d/elpa/async-20150203.2127")
 (add-to-list 'load-path "~/.emacs.d/lisp/helm/")
 
+;; Prevent Extraneous Tabs
 (setq-default indent-tabs-mode nil)
 
+;; Default Path: ~/.emacs.d
 (defconst user-init-dir
   (cond ((boundp 'user-emacs-directory)
          user-emacs-directory)
@@ -18,12 +26,12 @@
          user-init-directory)
         (t "~/.emacs.d/")))
 
-;; Python Settings
+;; Python
 (elpy-enable)
 (require 'ob-python)
 (require 're-builder)
-(setq reb-re-syntax 'string)
 
+(setq reb-re-syntax 'string)
 (setq python-shell-interpreter "ipython"
       python-shell-interpreter-args "-i")
 
@@ -31,15 +39,17 @@
 (setenv "LC_ALL" "en_US.UTF-8")
 (setenv "LANG" "en_US.UTF-8")
 
-;; Ruby Indent Level
+;; Ruby
 (setq ruby-indent-level 2)
 
 (add-hook 'term-mode-hook (lambda()
                 (yas-minor-mode -1)))
 
-;; Turn on snippets
+;; Snippets
 (require 'yasnippet)
+
 (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
+
 (yas-global-mode t)
 
 (custom-set-variables
@@ -79,13 +89,14 @@
  '(erc-track-position-in-mode-line t t)
  '(erc-user-full-name "adslkjfad;slkjflkj, asdf?")
  '(js-indent-level 2)
+ '(linum-format "%3d ")
  '(magit-diff-use-overlays nil)
  '(nrepl-message-colors
    (quote
     ("#CC9393" "#DFAF8F" "#F0DFAF" "#7F9F7F" "#BFEBBF" "#93E0E3" "#94BFF3" "#DC8CC3")))
  '(package-selected-packages
    (quote
-    (xah-lookup go-autocomplete sudo-edit indent-tools org-seek clevercss projectile-speedbar hl-todo syntactic-close git-gutter+ solarized-theme color-theme-sanityinc-tomorrow move-text apache-mode zenburn-theme yari yaml-mode xah-fly-keys writeroom-mode writegood-mode web-mode web-beautify visual-regexp-steroids url-shortener unicode-fonts twittering-mode tramp-term thesaurus textmate tern-auto-complete tabbar-ruler syslog-mode synonyms symon swoop swiper svg sublime-themes stem ssh sqlup-mode speed-type sos smex smartparens smart-tabs-mode smart-tab smart-mode-line-powerline-theme smart-forward smart-compile slime-theme slime slack shell-pop scss-mode scpaste sane-term rvm ruby-refactor robe rinari replace-pairs replace+ regex-tool ranger rainbow-delimiters python-x python-mode pytest projectile-rails pastelmac-theme password-vault paper-theme pandoc-mode osx-lib osx-dictionary org-random-todo org-password-manager org-journal org-ac oceanic-theme ob-ipython nyan-mode nodejs-repl neotree names muse multi-term monokai-theme molokai-theme meacupla-theme material-theme markdown-preview-mode markdown-mode+ majapahit-theme magit lorem-ipsum linum-relative leuven-theme less-css-mode kooten-theme json-mode js-comint jedi jdee indent-guide impatient-mode hlinum highlight-symbol highlight-parentheses highlight-indent-guides hideshow-org helm-robe helm-projectile helm-package helm-mode-manager helm-git helm-fuzzy-find helm-fuzzier helm-flyspell helm-flymake helm-flx helm-dictionary helm-dash helm-css-scss helm-anything helm-ag helm-ack handlebars-sgml-mode handlebars-mode hackernews grunt golden-ratio go-eldoc go gmail-message-mode git-gutter git fuzzy flymake-ruby flymake-jslint figlet fancy-narrow exec-path-from-shell etable eshell-prompt-extras ergoemacs-mode erc-crypt encourage-mode elpy elisp-lint dumb-jump drag-stuff discover-js2-refactor dired-ranger dired-k dired+ diff-hl dictionary deft dash-at-point darkburn-theme csv-mode css-eldoc css-comb company-jedi company-flx color-theme colonoscopy-theme coffee-mode chess calfw cabledolphin bongo blgrep bitly basic-theme avy autopair aurora-theme atom-one-dark-theme atom-dark-theme anzu anaphora anaconda-mode ample-zen-theme ag adoc-mode ac-sly ac-php ac-js2 ac-ispell ac-html-csswatcher ac-html ac-helm ac-emmet ac-c-headers 2048-game)))
+    (eslint-fix xah-lookup go-autocomplete sudo-edit indent-tools org-seek clevercss projectile-speedbar hl-todo syntactic-close git-gutter+ solarized-theme color-theme-sanityinc-tomorrow move-text apache-mode zenburn-theme yari yaml-mode xah-fly-keys writeroom-mode writegood-mode web-mode web-beautify visual-regexp-steroids url-shortener unicode-fonts twittering-mode tramp-term thesaurus textmate tern-auto-complete tabbar-ruler syslog-mode synonyms symon swoop swiper svg sublime-themes stem ssh sqlup-mode speed-type sos smex smartparens smart-tabs-mode smart-tab smart-mode-line-powerline-theme smart-forward smart-compile slime-theme slime slack shell-pop scss-mode scpaste sane-term rvm ruby-refactor robe rinari replace-pairs replace+ regex-tool ranger rainbow-delimiters python-x python-mode pytest projectile-rails pastelmac-theme password-vault paper-theme pandoc-mode osx-lib osx-dictionary org-random-todo org-password-manager org-journal org-ac oceanic-theme ob-ipython nyan-mode nodejs-repl neotree names muse multi-term monokai-theme molokai-theme meacupla-theme material-theme markdown-preview-mode markdown-mode+ majapahit-theme magit lorem-ipsum linum-relative leuven-theme less-css-mode kooten-theme json-mode js-comint jedi jdee indent-guide impatient-mode hlinum highlight-symbol highlight-parentheses highlight-indent-guides hideshow-org helm-robe helm-projectile helm-package helm-mode-manager helm-git helm-fuzzy-find helm-fuzzier helm-flyspell helm-flymake helm-flx helm-dictionary helm-dash helm-css-scss helm-anything helm-ag helm-ack handlebars-sgml-mode handlebars-mode hackernews grunt golden-ratio go-eldoc go gmail-message-mode git-gutter git fuzzy flymake-ruby flymake-jslint figlet fancy-narrow exec-path-from-shell etable eshell-prompt-extras ergoemacs-mode erc-crypt encourage-mode elpy elisp-lint dumb-jump drag-stuff discover-js2-refactor dired-ranger dired-k dired+ diff-hl dictionary deft dash-at-point darkburn-theme csv-mode css-eldoc css-comb company-jedi company-flx color-theme colonoscopy-theme coffee-mode chess calfw cabledolphin bongo blgrep bitly basic-theme avy autopair aurora-theme atom-one-dark-theme atom-dark-theme anzu anaphora anaconda-mode ample-zen-theme ag adoc-mode ac-sly ac-php ac-js2 ac-ispell ac-html-csswatcher ac-html ac-helm ac-emmet ac-c-headers 2048-game)))
  '(pdf-view-midnight-colors (quote ("#DCDCCC" . "#383838")))
  '(pos-tip-background-color "#A6E22E")
  '(pos-tip-foreground-color "#272822")
@@ -126,9 +137,6 @@
  '(xterm-color-names-bright
    ["#002b36" "#cb4b16" "#586e75" "#657b83" "#839496" "#6c71c4" "#93a1a1" "#fdf6e3"]))
 
-(global-hl-line-mode 1)
-(syntactic-close 1)
-
 ;; highlight symbol mode
 (require 'highlight-symbol)
 (global-set-key [(control f3)] 'highlight-symbol)
@@ -136,9 +144,11 @@
 (global-set-key [(shift f3)] 'highlight-symbol-prev)
 (global-set-key [(meta f3)] 'highlight-symbol-query-replace)
 
-;; some globals i use
+;; Global Modes
 (ivy-mode 1)
 (global-company-mode 1)
+(global-hl-line-mode 1)
+(syntactic-close 1)
 
 ;; directory tracking for sane-term and the like
 (set-variable 'dirtrack-list '("^.*[^ ]+:\\(.*\\)]" 1 nil))
@@ -160,15 +170,16 @@
 
 (global-set-key (kbd "C-c s") 'helm-css-scss)
 (require 'simple-httpd)
+
 ;; set root folder for httpd server
 (setq httpd-root "~/Sites")
 
-;; Magit Global Key Value
+;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
 ;; magit prevent startup message
 (setq magit-last-seen-setup-instructions "1.4.0")
 
-;; c
+;; C
 (require 'cc-mode)
 (define-key c-mode-base-map (kbd "C-x c") 'compile)
 
@@ -179,15 +190,13 @@
 ;; (ac-config-default)
 ;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
 ;; (add-to-list 'ac-modes 'web-mode)
-(global-set-key (kbd "C-x T") 'sane-term-create)
-(global-set-key (kbd "C-x t") 'sane-term)
 
 ;;(require 'auto-complete-config)
 ;;(require 'auto-complete)
 (require 'dired+)
 (require 'sane-term)
 
-;; Text editing packages
+;; Markdown
 (autoload 'markdown-mode "markdown-mode"
   "Major mode for editing Markdown files" t)
 (add-to-list 'auto-mode-alist '("\\.text\\'" . markdown-mode))
@@ -205,7 +214,7 @@
 (add-hook 'scss-mode-hook 'truncate-lines)
 
 (add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-;; (add-hook 'sgml-mode-hook 'auto-complete)
+(add-hook 'sgml-mode-hook 'auto-complete)
 
 (defun add-emmet-expand-to-smart-tab-completions ()
   (add-to-list 'smart-tab-completion-functions-alist
@@ -217,7 +226,7 @@
 (add-hook 'css-mode-hook 'add-emmet-expand-to-smart-tab-completions)
 
 (add-hook 'web-mode-hook 'emmet-mode)
-;;(add-hook 'web-mode-hook 'ac-emmet-html-setup)
+(add-hook 'web-mode-hook 'ac-emmet-html-setup)
 (add-hook 'web-mode-hook 'my-web-mode-hook)
 (add-hook 'web-mode-hook 'drag-stuff-mode)
 (add-hook 'web-mode-hook 'toggle-truncate-lines)

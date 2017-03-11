@@ -1,6 +1,9 @@
 ;; my custom key bindings
 ;;
 
+(global-set-key (kbd "C-x T") 'sane-term-create)
+(global-set-key (kbd "C-x t") 'sane-term)
+
 (global-set-key (kbd "<f2>") 'calculator) ;; load calculator
 (global-set-key (kbd "C-t") 'swiper) ;; load swoop
 (global-set-key (kbd "C-c C-p") 'list-packages) ;; update yo packages, fool
