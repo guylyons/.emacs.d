@@ -1,13 +1,18 @@
-;; my custom key bindings
+;; keybindings.el
+;; ------------------------------
+;; Author: gl
+;; Email: guylyons@protonmail.com
+;; ------------------------------
 ;;
+
 
 (global-set-key (kbd "C-x T") 'sane-term-create)
 (global-set-key (kbd "C-x t") 'sane-term)
 
-(global-set-key (kbd "<f2>") 'calculator) ;; load calculator
-(global-set-key (kbd "C-t") 'swiper) ;; load swoop
-(global-set-key (kbd "C-c C-p") 'list-packages) ;; update yo packages, fool
-(global-set-key (kbd "C-c C-e") 'erc) ;; chat
+(global-set-key (kbd "<f2>") 'calculator)
+(global-set-key (kbd "C-t") 'swiper)
+(global-set-key (kbd "C-c C-p") 'list-packages)
+(global-set-key (kbd "C-c C-e") 'erc)
 
 (global-set-key (kbd "C-1") 'helm-find-files)
 (global-set-key (kbd "C-2") 'helm-mini)

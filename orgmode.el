@@ -18,8 +18,7 @@
 (setq org-log-done t)
 (setq org-todo-keywords
       '(
-	(sequence "TODO" "STARTED" "|" "DONE" "DELEGATED" "POSTPONED" "CANCELED")
-	(sequence "CLONED" "TEST SENT" "|" "SCHEDULED")
+	(sequence "TODO" "DOING" "|" "DELEGATED" "POSTPONED" "DONE" "CANCELED")
 	(sequence "SENT" "APPROVED" "|" "PAID")
 	))
 (setq org-todo-keyword-faces
