@@ -1,10 +1,6 @@
 ;; Personel.el
 ;; Custom settings and keybindings
 
-(global-set-key (kbd "C-j") 'emmet-expand-line)
-;; make Projectile global
-(projectile-global-mode)
-
 ;; swiper settings taken from oremacs.com
 (custom-set-faces
  '(swiper-minibuffer-match-face-1
@@ -16,7 +12,7 @@
  '(swiper-minibuffer-match-face-4
    ((t :background "#ffbbff" :weight bold))))
 
-;; helm configuration
+;; Helm
 (require 'helm-config)
 (helm-mode 1)
 (helm-autoresize-mode 1)
@@ -31,7 +27,7 @@
       helm-recentf-fuzzy-match t) ;; optional fuzzy matching for helm-M-x
 (setq redisplay-dont-pause t)
 
-;; my personal skewer start up function
+;; Skewer
 (defun skewer-dev ()
   (interactive)
   (split-window-below)
@@ -39,16 +35,16 @@
   (skewer-repl)
   )
 
-;; multiple curosrs
+;; Multiple Curosrs
 (require 'multiple-cursors)
 (global-set-key (kbd "C-S-c C-S-c") 'mc/edit-lines)
 (global-set-key (kbd "C->") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
-;; yasnippet
+;; Yasnippet
 (require 'yasnippet)
-;;(yas-global-mode 1)
+(yas-global-mode 1)
 
 ;; emacs title bar formatting
 (setq frame-title-format '("" "[ %b ] %m-mode emacs " emacs-version))
@@ -60,7 +56,7 @@
 (setq dired-recursive-deletes 'always)
 
 ;; js highlight level
-(setq js2-highlight-level 2)
+(setq js2-highlight-level 3)
 
 ;; Emacs backup settings
 (defun make-backup-file-name (FILE)
@@ -70,26 +66,10 @@
 	(make-directory dirname t))
     (concat dirname (file-name-nondirectory FILE))))
 
-;; My personal key bindings
-(global-set-key (kbd "C-x p") 'helm-projectile)
-(global-set-key (kbd "C-c >") 'calendar)
-(global-set-key (kbd "C-x w r") 'writeroom-mode)
-
 ;; remap for meta key in mac
 (setq mac-command-modifier 'meta)
 
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
-
-;; keybinding for quick access to org notes.org
-(global-set-key (kbd "C-c n")
-		(lambda () (interactive) (find-file "~/org/notes.org")))
-(set-register ?o (cons 'file "~/org/notes.org"))
-
-;; journal-mode hooks
-(add-hook 'org-journal-mode-hook 'visual-fill-column-mode)
-(add-hook 'org-journal-mode-hook 'writegood-mode)
-
-(autopair-global-mode)
 
 (setq inhibit-splash-screen t
       initial-scratch-message nil
@@ -104,6 +84,5 @@
 ;; always execute dired-k when dired buffer is opened
 (add-hook 'dired-initial-position-hook 'dired-k)
 
-(add-to-list 'load-path "~/.emacs.d/lisp/")
 (setq ring-bell-function 'ignore)
 

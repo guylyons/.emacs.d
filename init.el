@@ -26,6 +26,8 @@
          user-init-directory)
         (t "~/.emacs.d/")))
 
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+
 ;; Python
 (elpy-enable)
 (require 'ob-python)
@@ -88,6 +90,7 @@
  '(erc-track-mode t)
  '(erc-track-position-in-mode-line t t)
  '(erc-user-full-name "adslkjfad;slkjflkj, asdf?")
+ '(exec-path-from-shell-check-startup-files nil)
  '(js-indent-level 2)
  '(linum-format "%3d ")
  '(magit-diff-use-overlays nil)
@@ -145,10 +148,12 @@
 (global-set-key [(meta f3)] 'highlight-symbol-query-replace)
 
 ;; Global Modes
+(projectile-global-mode)
 (ivy-mode 1)
 (global-company-mode 1)
 (global-hl-line-mode 1)
 (syntactic-close 1)
+(autopair-global-mode)
 
 ;; directory tracking for sane-term and the like
 (set-variable 'dirtrack-list '("^.*[^ ]+:\\(.*\\)]" 1 nil))
