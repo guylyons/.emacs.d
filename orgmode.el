@@ -8,6 +8,13 @@
 (define-key global-map "\C-cl" 'org-store-link)
 
 (org-clock-persistence-insinuate)
+;; orgmode.el
+;; ------------------------------
+;; Author: gl
+;; Email: guylyons@protonmail.com
+;; ------------------------------
+;;
+
 (require 'org)
 
 (setq org-agenda-files (list "~/org/" "~/org/journal/"))

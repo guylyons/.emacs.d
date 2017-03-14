@@ -244,6 +244,7 @@
 (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
+
 (autoload 'scss-mode "scss-mode")
 (defun my-web-mode-hook ()
   "Hooks for Web mode."
@@ -255,6 +256,7 @@
   (define-key scss-mode-map (kbd "C-c u") 'helm-css-scss))
 
 (defvar css-indent-offset 2)
+
 (require 'drag-stuff)
 (require 'emmet-mode)
 (require 'flycheck)

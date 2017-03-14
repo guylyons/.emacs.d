@@ -5,7 +5,6 @@
 ;; ------------------------------
 ;;
 
-;; Web Dev packages
 (add-hook 'js2-mode-hook 'drag-stuff-mode)
 (add-hook 'js2-mode-hook
 	  (lambda () (flycheck-mode t)))
