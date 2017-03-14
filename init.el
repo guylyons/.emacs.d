@@ -173,7 +173,6 @@
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
 
-(global-set-key (kbd "C-c s") 'helm-css-scss)
 (require 'simple-httpd)
 
 ;; set root folder for httpd server
@@ -188,16 +187,13 @@
 (require 'cc-mode)
 (define-key c-mode-base-map (kbd "C-x c") 'compile)
 
-;; Projectile
-(global-set-key (kbd "C-c h") 'helm-projectile)
-
 ;; File management and terminals
-;; (ac-config-default)
-;; (add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
-;; (add-to-list 'ac-modes 'web-mode)
+(ac-config-default)
+(add-to-list 'ac-dictionary-directories "~/.emacs.d/ac-dict")
+(add-to-list 'ac-modes 'web-mode)
 
-;;(require 'auto-complete-config)
-;;(require 'auto-complete)
+(require 'auto-complete-config)
+(require 'auto-complete)
 (require 'dired+)
 (require 'sane-term)
 

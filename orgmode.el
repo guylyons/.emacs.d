@@ -9,6 +9,7 @@
 
 (org-clock-persistence-insinuate)
 (require 'org)
+
 (setq org-agenda-files (list "~/org/" "~/org/journal/"))
 (setq org-agenda-include-diary t)
 (setq org-clock-persist 'history)
@@ -28,15 +29,6 @@
 	("DELEGATED" . "pink")
 	("POSTPONED" . "#008080")))
 
-;; keybindings for password manager
-(add-hook 'org-mode-hook 'org-password-manager-key-bindings)
-
-;; keybinding for quick access to org notes.org
-(global-set-key (kbd "C-c n")
-		(lambda () (interactive) (find-file "~/org/notes.org")))
-(set-register ?o (cons 'file "~/org/notes.org"))
-
-;; journal-mode hooks
 (add-hook 'org-journal-mode-hook 'visual-fill-column-mode)
 (add-hook 'org-journal-mode-hook 'writegood-mode)
 

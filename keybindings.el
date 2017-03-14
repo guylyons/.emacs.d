@@ -5,6 +5,10 @@
 ;; ------------------------------
 ;;
 
+(global-set-key (kbd "C-c n")
+		(lambda () (interactive) (find-file "~/org/notes.org")))
+(set-register ?o (cons 'file "~/org/notes.org"))
+(add-hook 'org-mode-hook 'org-password-manager-key-bindings)
 
 (global-set-key (kbd "C-x T") 'sane-term-create)
 (global-set-key (kbd "C-x t") 'sane-term)
@@ -14,7 +18,10 @@
 (global-set-key (kbd "C-x p") 'helm-projectile)
 (global-set-key (kbd "C-c >") 'calendar)
 (global-set-key (kbd "C-x w r") 'writeroom-mode)
+(global-set-key (kbd "C-c s") 'helm-css-scss)
+(global-set-key (kbd "C-c h") 'helm-projectile)
 
+(global-set-key (kbd "C-c g") 'xah-lookup-google)
 
 (global-set-key (kbd "<f2>") 'calculator)
 (global-set-key (kbd "C-t") 'swiper)
