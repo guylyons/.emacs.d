@@ -16,10 +16,6 @@
 (require 'helm-config)
 (helm-mode 1)
 (helm-autoresize-mode 1)
-(global-set-key (kbd "M-x") 'helm-M-x)
-(global-set-key (kbd "M-y") 'helm-show-kill-ring)
-(global-set-key (kbd "C-x b") 'helm-mini)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
 (when (executable-find "ack-grep")
   (setq helm-grep-default-command "ack-grep -Hn --no-group --no-color %e %p %f"
 	helm-grep-default-recurse-command "ack-grep -H --no-group --no-color %e %p %f"))
@@ -77,11 +73,8 @@
 
 (require 'dired-k)
 (define-key dired-mode-map (kbd "K") 'dired-k)
-
-;; You can use dired-k alternative to revert-buffer
 (define-key dired-mode-map (kbd "g") 'dired-k)
 
-;; always execute dired-k when dired buffer is opened
 (add-hook 'dired-initial-position-hook 'dired-k)
 
 (setq ring-bell-function 'ignore)
