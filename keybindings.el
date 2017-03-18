@@ -5,6 +5,8 @@
 ;; ------------------------------
 ;;
 
+(global-set-key (kbd "C-b") 'buffer-menu)
+
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-x b") 'helm-mini)
@@ -29,7 +31,7 @@
 (global-set-key (kbd "C-c g") 'xah-lookup-google)
 
 (global-set-key (kbd "<f2>") 'calculator)
-(global-set-key (kbd "C-t") 'swiper)
+(global-set-key (kbd "C-t") 'swiper-helm)
 (global-set-key (kbd "C-c C-p") 'list-packages)
 (global-set-key (kbd "C-c C-e") 'erc)
 
