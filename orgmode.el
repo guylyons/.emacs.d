@@ -1,19 +1,14 @@
-;; Org Mode
-(add-hook 'org-journal-mode-hook 'org-mode)
-(add-hook 'text-mode-hook 'turn-on-visual-line-mode)
-
-;; Key bindings
-(define-key global-map "\C-ca" 'org-agenda)
-(define-key global-map "\C-cc" 'org-capture)
-(define-key global-map "\C-cl" 'org-store-link)
-
-(org-clock-persistence-insinuate)
 ;; orgmode.el
 ;; ------------------------------
 ;; Author: gl
 ;; Email: guylyons@protonmail.com
 ;; ------------------------------
 ;;
+
+(add-hook 'org-journal-mode-hook 'org-mode)
+(add-hook 'text-mode-hook 'turn-on-visual-line-mode)
+
+(org-clock-persistence-insinuate)
 
 (require 'org)
 
@@ -26,7 +21,7 @@
 (setq org-log-done t)
 (setq org-todo-keywords
       '(
-	(sequence "TODO" "DOING" "|" "DELEGATED" "POSTPONED" "DONE" "CANCELED")
+	(sequence "TODO" "DOING" "|" "DONE" "POSTPONED" "CANCELED")
 	(sequence "SENT" "APPROVED" "|" "PAID")
 	))
 (setq org-todo-keyword-faces
