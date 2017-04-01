@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: custom field
+# key: cf
+# --
+$$0 = get_field( $0 );
