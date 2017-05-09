@@ -66,7 +66,6 @@
 (ivy-mode 1)
 (global-company-mode 1)
 (global-hl-line-mode 1)
-(syntactic-close 1)
 (autopair-global-mode)
 
 ;; directory tracking for sane-term and the like
@@ -162,7 +161,9 @@
   (define-key scss-mode-map (kbd "C-c u") 'helm-css-scss))
 
 (defvar css-indent-offset 2)
-(defvar js-indent-level 2)
+(setq js-indent-level 2)
+
+(setq debug-on-error t)
 
 (require 'drag-stuff)
 (require 'emmet-mode)
@@ -170,6 +171,10 @@
 (require 'less-css-mode)
 (require 'web-mode)
 (require 'autopair)
+
+;; no backups
+(setq make-backup-files nil) ; stop creating backup~ files
+(setq auto-save-default nil) ; stop creating #autosave# files
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -199,6 +204,9 @@
  '(package-selected-packages
    (quote
     (editorconfig restclient vue-mode major-mode-icons zenburn-theme yari xah-lookup xah-fly-keys writeroom-mode writegood-mode web-mode web-beautify url-shortener unicode-fonts twittering-mode tramp-term thesaurus textmate tern-auto-complete tabbar-ruler syntactic-close synonyms swoop swiper-helm svg sublime-themes stem ssh sqlup-mode sos solarized-theme smex smartparens smart-mode-line-powerline-theme smart-forward smart-compile slime-theme slime slack shell-pop scss-mode sane-term rvm ruby-refactor robe rinari replace-pairs replace+ regex-tool ranger rainbow-delimiters python-x python-mode pytest projectile-speedbar projectile-rails pastelmac-theme password-vault paper-theme pandoc-mode osx-lib osx-dictionary org-seek org-random-todo org-password-manager org-journal org-ac oceanic-theme ob-ipython nyan-mode nodejs-repl neotree names muse multi-term move-text meacupla-theme material-theme markdown-preview-mode markdown-mode+ majapahit-theme magit lorem-ipsum linum-relative leuven-theme less-css-mode kooten-theme json-mode js-comint jedi jdee indent-tools indent-guide impatient-mode hlinum hl-todo highlight-symbol highlight-parentheses highlight-indent-guides hideshow-org helm-robe helm-projectile helm-package helm-mode-manager helm-git helm-fuzzy-find helm-fuzzier helm-flyspell helm-flymake helm-flx helm-emmet helm-dictionary helm-dash helm-css-scss helm-anything helm-ag helm-ack handlebars-sgml-mode handlebars-mode hackernews grunt golden-ratio go-eldoc go gmail-message-mode git-gutter git-gutter+ git fuzzy flymake-ruby figlet fancy-narrow exec-path-from-shell etable eslint-fix eshell-prompt-extras ergoemacs-mode erc-crypt encourage-mode emoji-fontset emoji-cheat-sheet-plus elpy elisp-lint dumb-jump drag-stuff dracula-theme discover-js2-refactor dired-ranger dired-k dired+ diff-hl dictionary deft dash-at-point darkburn-theme csv-mode company-jedi company-flx color-theme-sanityinc-tomorrow color-theme coffee-mode chess calfw cabledolphin bongo blgrep blackboard-theme bitly avy autopair aurora-theme atom-one-dark-theme atom-dark-theme apache-mode anzu anaphora anaconda-mode adoc-mode)))
+ '(projectile-globally-ignored-directories
+   (quote
+    (".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" ".sass-cache" "bower_components" "node_modules")))
  '(save-place t)
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
