@@ -172,10 +172,27 @@
 (require 'web-mode)
 (require 'autopair)
 
+(add-to-list 'default-frame-alist '(font . "Source Code Pro-14" ))
+(set-face-attribute 'default t :font "Source Code Pro-14")
+
 ;; no backups
 (setq make-backup-files nil) ; stop creating backup~ files
 (setq auto-save-default nil) ; stop creating #autosave# files
-
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(cua-mode t nil (cua-base))
+ '(custom-enabled-themes (quote (sanityinc-tomorrow-day)))
+ '(custom-safe-themes
+   (quote
+    ("bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
+ '(save-place t)
+ '(scroll-bar-mode nil)
+ '(show-paren-mode t)
+ '(tool-bar-mode nil)
+ '(tooltip-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -185,29 +202,3 @@
  '(swiper-minibuffer-match-face-2 ((t :background "#bbbbbb" :weight bold)))
  '(swiper-minibuffer-match-face-3 ((t :background "#bbbbff" :weight bold)))
  '(swiper-minibuffer-match-face-4 ((t :background "#ffbbff" :weight bold))))
-
-(add-to-list 'default-frame-alist '(font . "Source Code Pro-14" ))
-(set-face-attribute 'default t :font "Source Code Pro-14")
-(sml/setup)
-(setq sml/theme 'respectful)
-(load-theme 'solarized-light t)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(cua-mode t nil (cua-base))
- '(custom-safe-themes
-   (quote
-    ("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" default)))
- '(erc-nick "cstls")
- '(package-selected-packages
-   (quote
-    (editorconfig restclient vue-mode major-mode-icons zenburn-theme yari xah-lookup xah-fly-keys writeroom-mode writegood-mode web-mode web-beautify url-shortener unicode-fonts twittering-mode tramp-term thesaurus textmate tern-auto-complete tabbar-ruler syntactic-close synonyms swoop swiper-helm svg sublime-themes stem ssh sqlup-mode sos solarized-theme smex smartparens smart-mode-line-powerline-theme smart-forward smart-compile slime-theme slime slack shell-pop scss-mode sane-term rvm ruby-refactor robe rinari replace-pairs replace+ regex-tool ranger rainbow-delimiters python-x python-mode pytest projectile-speedbar projectile-rails pastelmac-theme password-vault paper-theme pandoc-mode osx-lib osx-dictionary org-seek org-random-todo org-password-manager org-journal org-ac oceanic-theme ob-ipython nyan-mode nodejs-repl neotree names muse multi-term move-text meacupla-theme material-theme markdown-preview-mode markdown-mode+ majapahit-theme magit lorem-ipsum linum-relative leuven-theme less-css-mode kooten-theme json-mode js-comint jedi jdee indent-tools indent-guide impatient-mode hlinum hl-todo highlight-symbol highlight-parentheses highlight-indent-guides hideshow-org helm-robe helm-projectile helm-package helm-mode-manager helm-git helm-fuzzy-find helm-fuzzier helm-flyspell helm-flymake helm-flx helm-emmet helm-dictionary helm-dash helm-css-scss helm-anything helm-ag helm-ack handlebars-sgml-mode handlebars-mode hackernews grunt golden-ratio go-eldoc go gmail-message-mode git-gutter git-gutter+ git fuzzy flymake-ruby figlet fancy-narrow exec-path-from-shell etable eslint-fix eshell-prompt-extras ergoemacs-mode erc-crypt encourage-mode emoji-fontset emoji-cheat-sheet-plus elpy elisp-lint dumb-jump drag-stuff dracula-theme discover-js2-refactor dired-ranger dired-k dired+ diff-hl dictionary deft dash-at-point darkburn-theme csv-mode company-jedi company-flx color-theme-sanityinc-tomorrow color-theme coffee-mode chess calfw cabledolphin bongo blgrep blackboard-theme bitly avy autopair aurora-theme atom-one-dark-theme atom-dark-theme apache-mode anzu anaphora anaconda-mode adoc-mode)))
- '(projectile-globally-ignored-directories
-   (quote
-    (".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" ".sass-cache" "bower_components" "node_modules")))
- '(save-place t)
- '(scroll-bar-mode nil)
- '(show-paren-mode t)
- '(tool-bar-mode nil))
