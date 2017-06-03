@@ -1,16 +1,16 @@
 ;; Personel.el
 ;; Custom settings and keybindings
 
-;; swiper settings taken from oremacs.com
-(custom-set-faces
- '(swiper-minibuffer-match-face-1
-   ((t :background "#dddddd")))
- '(swiper-minibuffer-match-face-2
-   ((t :background "#bbbbbb" :weight bold)))
- '(swiper-minibuffer-match-face-3
-   ((t :background "#bbbbff" :weight bold)))
- '(swiper-minibuffer-match-face-4
-   ((t :background "#ffbbff" :weight bold))))
+;; ;; swiper settings taken from oremacs.com
+;; (custom-set-faces
+;;  '(swiper-minibuffer-match-face-1
+;;    ((t :background "#dddddd")))
+;;  '(swiper-minibuffer-match-face-2
+;;    ((t :background "#bbbbbb" :weight bold)))
+;;  '(swiper-minibuffer-match-face-3
+;;    ((t :background "#bbbbff" :weight bold)))
+;;  '(swiper-minibuffer-match-face-4
+;;    ((t :background "#ffbbff" :weight bold))))
 
 ;; Helm
 (require 'helm-config)
