@@ -1,8 +1,7 @@
-# Guy's awful Emacs .init file
+# .init
 
-This is my mess of an .init file for Emacs which I'll shortly be changing over to a more organized (I hope) org file. 
+My personal configuration I've built over time in Emacs. Not perfect, never complete. This repo is always changing, as I am continually customizing my setup.
 
 ## TODO
 
 - Convert to singular Org file
-- Import Atom snippets
