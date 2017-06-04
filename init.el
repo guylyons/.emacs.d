@@ -83,6 +83,22 @@
 (require 'dired+)
 (require 'sane-term)
 
+(require 'dired-k)
+(define-key dired-mode-map (kbd "K") 'dired-k)
+
+;; You can use dired-k alternative to revert-buffer
+(define-key dired-mode-map (kbd "g") 'dired-k)
+
+;; always execute dired-k when dired buffer is opened
+(add-hook 'dired-initial-position-hook 'dired-k)
+
+(add-hook 'dired-after-readin-hook #'dired-k-no-revert)
+
+(require 'direx-k)
+
+(global-set-key (kbd "C-\\") 'direx-project:jump-to-project-root-other-window)
+(define-key direx:direx-mode-map (kbd "K") 'direx-k)
+
 ;; Markdown
 (autoload 'markdown-mode "markdown-mode"
   "Major mode for editing Markdown files" t)
@@ -107,14 +123,16 @@
 (add-hook 'scss-mode-hook 'truncate-lines)
 
 ;; Emmet
-(require 'emmet-mode)
-(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-(add-hook 'sgml-mode-hook 'emmet-mode) ;; Auto-start on any markup modes
-(add-hook 'css-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
+(add-hook 'sgml-mode-hook 'emmet-mode)
+(add-hook 'css-mode-hook  'emmet-mode)
+
+(add-hook 'emmet-mode-hook (lambda () (setq emmet-indent-after-insert nil)))
+(add-hook 'emmet-mode-hook (lambda () (setq emmet-indentation 2))) ;; indent 2 spaces.
+(setq emmet-move-cursor-between-quotes t) ;; default nil
+(setq emmet-move-cursor-after-expanding nil) ;; default
 
 ;; Web-mode
 (add-hook 'web-mode-hook 'emmet-mode)
-(add-hook 'web-mode-hook 'ac-emmet-html-setup)
 (add-hook 'web-mode-hook 'drag-stuff-mode)
 (add-hook 'web-mode-hook 'toggle-truncate-lines)
 (add-hook 'web-mode-hook 'linum-mode)
@@ -169,7 +187,11 @@
  '(custom-enabled-themes nil)
  '(custom-safe-themes
    (quote
-    ("2f427a54ff2c7ae9e61fde650037c1590e35922fefafa47c162a94e4d6d422a6" "14e6b27c801eece344f7b11337076d6e56ff444588c5f51c5f14854befc6c3b1" "7ed277f12c9fd279f258a34cc618d203243dd56e7f37feac892bb26ad7a1cad2" "2f2d9b9827bcfd4dab08df6e0f5cbf347b65c8fc112d947cf696234b80261ebf" "54dd7c04a3fcebbf69ba8f9a9f116699e7247b6fdbd46a917914364426634747" "332b53f3331d7280557d79b3398e376fc290c299ac1c4870d51b9019c2831362" "18a393331877d6332e859d36ec6abf755f560437c2b14f4513a0745ff0d420a5" "8ccfc8f0da78d622fd390e84fdc955e404478b4a6c97a421fcea2b914bdea5ff" "9b59e147dbbde5e638ea1cde5ec0a358d5f269d27bd2b893a0947c4a867e14c1" "a74c967cabd9218c477507ba82eee52cb5683078e2a39c8ef90c051a692aea80" "ee0e801a44255007eb4ad1d9aebc923f237ffcf5101ad35f131e1a4b062ff6f4" "67e998c3c23fe24ed0fb92b9de75011b92f35d3e89344157ae0d544d50a63a72" "4486ade2acbf630e78658cd6235a5c6801090c2694469a2a2b4b0e12227a64b9" "47744f6c8133824bdd104acc4280dbed4b34b85faa05ac2600f716b0226fb3f6" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
+    ("628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "5dc0ae2d193460de979a463b907b4b2c6d2c9c4657b2e9e66b8898d2592e3de5" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "2f427a54ff2c7ae9e61fde650037c1590e35922fefafa47c162a94e4d6d422a6" "14e6b27c801eece344f7b11337076d6e56ff444588c5f51c5f14854befc6c3b1" "7ed277f12c9fd279f258a34cc618d203243dd56e7f37feac892bb26ad7a1cad2" "2f2d9b9827bcfd4dab08df6e0f5cbf347b65c8fc112d947cf696234b80261ebf" "54dd7c04a3fcebbf69ba8f9a9f116699e7247b6fdbd46a917914364426634747" "332b53f3331d7280557d79b3398e376fc290c299ac1c4870d51b9019c2831362" "18a393331877d6332e859d36ec6abf755f560437c2b14f4513a0745ff0d420a5" "8ccfc8f0da78d622fd390e84fdc955e404478b4a6c97a421fcea2b914bdea5ff" "9b59e147dbbde5e638ea1cde5ec0a358d5f269d27bd2b893a0947c4a867e14c1" "a74c967cabd9218c477507ba82eee52cb5683078e2a39c8ef90c051a692aea80" "ee0e801a44255007eb4ad1d9aebc923f237ffcf5101ad35f131e1a4b062ff6f4" "67e998c3c23fe24ed0fb92b9de75011b92f35d3e89344157ae0d544d50a63a72" "4486ade2acbf630e78658cd6235a5c6801090c2694469a2a2b4b0e12227a64b9" "47744f6c8133824bdd104acc4280dbed4b34b85faa05ac2600f716b0226fb3f6" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" default)))
+ '(emmet-indent-after-insert nil)
+ '(emmet-indentation 2)
+ '(emmet-move-cursor-after-expanding t)
+ '(emmet-move-cursor-between-quotes t)
  '(fci-rule-color "#383838")
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
  '(nrepl-message-colors
@@ -205,7 +227,11 @@
      (320 . "#8CD0D3")
      (340 . "#94BFF3")
      (360 . "#DC8CC3"))))
- '(vc-annotate-very-old-color "#DC8CC3"))
+ '(vc-annotate-very-old-color "#DC8CC3")
+ '(web-mode-auto-close-style 2)
+ '(web-mode-commands-like-expand-region
+   (quote
+    (web-mode-mark-and-expand emmet-expand-line mc/mark-next-like-this))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

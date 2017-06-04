@@ -10,12 +10,10 @@
 (define-key global-map "\C-cc" 'org-capture)
 (define-key global-map "\C-cl" 'org-store-link)
 
-(global-set-key (kbd "C-b") 'buffer-menu)
-
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-x b") 'helm-mini)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-s") 'helm-find-files)
 
 (global-set-key (kbd "M-SPC") 'set-mark-command)
 
@@ -26,8 +24,6 @@
 
 (global-set-key (kbd "C-x T") 'sane-term-create)
 (global-set-key (kbd "C-x t") 'sane-term)
-
-(global-set-key (kbd "C-j") 'emmet-expand-line)
 
 (global-set-key (kbd "C-x p") 'helm-projectile)
 (global-set-key (kbd "C-c >") 'calendar)
@@ -49,9 +45,12 @@
 (global-set-key (kbd "C-8") 'helm-projectile-ack)
 (global-set-key (kbd "C-9") 'helm-projectile-ag)
 (global-set-key (kbd "C-`") 'kill-buffer-and-window)
+
 (global-set-key [C-tab] 'previous-buffer)
 (global-set-key [M-tab] 'next-buffer)
 (global-set-key (kbd "C-0") 'other-window)
+
+(global-set-key (kbd "C-S-E") 'emmet-expand-line)
 
 (global-set-key [C-M-tab] [alt-tab])
 (setq mac-command-modifier 'control)
