@@ -13,7 +13,7 @@
 (global-set-key (kbd "M-x") 'helm-M-x)
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-x b") 'helm-mini)
-(global-set-key (kbd "C-s") 'helm-find-files)
+(global-set-key (kbd "C-S-F") 'helm-find-files)
 
 (global-set-key (kbd "M-SPC") 'set-mark-command)
 
@@ -34,6 +34,8 @@
 (global-set-key (kbd "C-c g") 'xah-lookup-google)
 
 (global-set-key (kbd "<f2>") 'calculator)
+(global-set-key (kbd "<f3>") 'sane-term)
+
 (global-set-key (kbd "C-t") 'swiper)
 (global-set-key (kbd "C-c C-p") 'list-packages)
 (global-set-key (kbd "C-c C-e") 'erc)
@@ -51,6 +53,10 @@
 (global-set-key (kbd "C-0") 'other-window)
 
 (global-set-key (kbd "C-S-E") 'emmet-expand-line)
+(global-set-key (kbd "C-S-P") 'helm-projectile)
+(global-set-key (kbd "C-S-S") 'save-buffer)
 
 (global-set-key [C-M-tab] [alt-tab])
 (setq mac-command-modifier 'control)
+
+(drag-stuff-define-keys)
