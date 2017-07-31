@@ -1,10 +1,4 @@
 ;; keybindings.el
-;; ------------------------------
-;; Author: gl
-;; Email: guylyons@protonmail.com
-;; ------------------------------
-;;
-
 
 (define-key global-map "\C-ca" 'org-agenda)
 (define-key global-map "\C-cc" 'org-capture)
@@ -14,6 +8,8 @@
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (global-set-key (kbd "C-x b") 'helm-mini)
 (global-set-key (kbd "C-S-F") 'helm-find-files)
+
+(global-set-key (kbd "C-S-D") 'helm-projectile-find-file-dwim)
 
 (global-set-key (kbd "M-SPC") 'set-mark-command)
 
@@ -46,7 +42,8 @@
 (global-set-key (kbd "C-4") 'helm-projectile-find-file)
 (global-set-key (kbd "C-8") 'helm-projectile-ack)
 (global-set-key (kbd "C-9") 'helm-projectile-ag)
-(global-set-key (kbd "C-`") 'kill-buffer-and-window)
+(global-set-key (kbd "C-`") 'kill-buffer)
+(global-set-key (kbd "C-!") 'eshell)
 
 (global-set-key [C-tab] 'previous-buffer)
 (global-set-key [M-tab] 'next-buffer)
@@ -55,8 +52,14 @@
 (global-set-key (kbd "C-S-E") 'emmet-expand-line)
 (global-set-key (kbd "C-S-P") 'helm-projectile)
 (global-set-key (kbd "C-S-S") 'save-buffer)
+(global-set-key (kbd "C-S-A") 'mark-whole-buffer)
 
 (global-set-key [C-M-tab] [alt-tab])
 (setq mac-command-modifier 'control)
 
 (drag-stuff-define-keys)
+
+;; window management
+(global-set-key (kbd "C--") 'split-window-right)
+(global-set-key (kbd "C-=") 'split-window-below)
+(global-set-key (kbd "C-S-O") 'delete-other-windows)

@@ -1,9 +1,4 @@
 ;; orgmode.el
-;; ------------------------------
-;; Author: gl
-;; Email: guylyons@protonmail.com
-;; ------------------------------
-;;
 
 (add-hook 'org-journal-mode-hook 'org-mode)
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)

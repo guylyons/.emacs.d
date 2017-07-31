@@ -1,7 +1,7 @@
 # ignore everything
 /*
 
-# except for elisp files
+# except for these elisp files
 !README.md
 !init.el
 !javascript.el
