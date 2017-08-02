@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: ruby-tag
+# key: rt
+# --
+<% $0 %>

@@ -60,6 +60,7 @@
 (drag-stuff-define-keys)
 
 ;; window management
+(global-set-key (kbd "C-o") 'other-window)
 (global-set-key (kbd "C--") 'split-window-right)
 (global-set-key (kbd "C-=") 'split-window-below)
 (global-set-key (kbd "C-S-O") 'delete-other-windows)
