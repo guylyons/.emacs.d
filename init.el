@@ -254,7 +254,6 @@
    (quote
     ("#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3" "#fdf6e3")))
  '(hl-sexp-background-color "#1c1f26")
- '(indent-guide-char ".")
  '(indent-tabs-mode nil)
  '(js-indent-level 2)
  '(linum-format "%3d  ")
@@ -372,7 +371,6 @@
      (340 . "#94BFF3")
      (360 . "#DC8CC3"))))
  '(vc-annotate-very-old-color "#DC8CC3")
- '(web-mode-attr-indent-offset 2)
  '(web-mode-auto-close-style 1)
  '(web-mode-commands-like-expand-region
    (quote
