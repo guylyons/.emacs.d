@@ -64,3 +64,8 @@
 (global-set-key (kbd "C--") 'split-window-right)
 (global-set-key (kbd "C-=") 'split-window-below)
 (global-set-key (kbd "C-S-O") 'delete-other-windows)
+
+(global-set-key (kbd "C-S-W") 'whitespace-cleanup)
+(global-set-key (kbd "C-s") 'save-buffer)
+
+(global-set-key (kbd "C-S-d") 'duplicate-line)
