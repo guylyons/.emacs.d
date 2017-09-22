@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: React Class
+# key: rcl
+# --
+class $1 extends Component {
+  render() {
+     return(
+       <div>Hello, I am $1!</div>
+     );
+  }
+};
