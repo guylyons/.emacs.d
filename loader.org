@@ -1,0 +1,42 @@
+#+TITLE:  Emacs Configuration File
+#+AUTHOR: Guy Lyons
+#+EMAIL:  guylyons@protonmail.com
+#+PROPERTY:    results silent
+#+PROPERTY:    header-args:sh  :tangle no
+#+PROPERTY:    tangle ~/.emacs.d/init.el
+#+PROPERTY:    eval no-export
+#+PROPERTY:    comments org
+
+* Packages
+Emacs has, like every other operating system, a [[http://tromey.com/elpa/][package manager]] with
+its own collection repository.  Adding the following repositories:
+
+#+BEGIN_SRC elisp
+   (require 'package)
+
+   (setq package-archives '(("org"       . "http://orgmode.org/elpa/")
+                            ("gnu"       . "http://elpa.gnu.org/packages/")
+                            ("melpa"     . "http://melpa.milkbox.net/packages/")
+                            ("marmalade" . "http://marmalade-repo.org/packages/")))
+   (package-initialize)
+   (package-refresh-contents)
+#+END_SRC
+
+All individual source code files (that don’t below to any package),
+go into the =elisp= directory.
+
+#+BEGIN_SRC elisp
+  (add-to-list 'load-path "~/.emacs.d/elisp")
+#+END_SRC
+
+#+BEGIN_SRC elisp
+  (require 'use-package)
+#+END_SRC
+
+Since I use latest version of =ag=, highlight keywords:
+
+#+BEGIN_SRC elisp
+  (use-package ag
+    :init      (setq ag-highlight-search t)
+    :config    (add-to-list 'ag-arguments "--word-regexp"))
+#+END_SRC

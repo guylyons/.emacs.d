@@ -1,14 +1,16 @@
-# ignore everything
-/*
-
-# except for these elisp files
-!README.md
-!init.el
-!javascript.el
-!keybindings.el
-!personal.el
-!webstart.el
-!orgmode.el
-!.gitignore
-!snippets/
-!snippets/*
+# emacs .gitignore
+elpa
+lisp
+recentf
+var
+.emacs.desktop
+.mc-lists.el
+ac-comphist.dat
+projectile-bookmarks.eld
+tutorial
+url
+eshell
+auto-save-list
+smex-items
+abbrev_defs
+org-clock-save.el
