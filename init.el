@@ -32,6 +32,10 @@
 (setenv "LC_ALL" "en_US.UTF-8")
 (setenv "LANG" "en_US.UTF-8")
 
+;; no backups
+(setq make-backup-files nil) ; stop creating backup~ files
+(setq auto-save-default nil) ; stop creating #autosave# files
+
 (add-hook 'term-mode-hook (lambda()
                 (yas-minor-mode -1)))
 
@@ -53,7 +57,6 @@
 (autopair-global-mode)
 (global-hl-line-mode)
 (ivy-mode 1)
-(nyan-mode 1)
 (add-hook 'after-init-hook 'global-company-mode)
 
 (require 'drag-stuff)
@@ -61,8 +64,12 @@
 (require 'less-css-mode)
 (require 'web-mode)
 (require 'autopair)
+(require 'dired+)
+(require 'sane-term)
+
 (require 'company)
 (require 'company-web-html)
+
 (setq company-tooltip-limit 20)                      ; bigger popup window
 (setq company-tooltip-align-annotations 't)          ; align annotations to the right tooltip border
 (setq company-idle-delay .3)                         ; decrease delay before autocompletion popup shows
@@ -98,9 +105,6 @@
 ;; magit prevent startup message
 (setq magit-last-seen-setup-instructions "1.4.0")
 
-(require 'dired+)
-(require 'sane-term)
-
 ;; Markdown
 (autoload 'markdown-mode "markdown-mode"
   "Major mode for editing Markdown files" t)
@@ -108,13 +112,13 @@
 (add-to-list 'auto-mode-alist '("\\.markdown\\'" . markdown-mode))
 (add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
-;; c-mode
+;; C
 (require 'cc-mode)
 (define-key c-mode-base-map (kbd "C-x c") 'compile)
 (add-hook 'c-mode-hook 'linum-mode)
 (add-hook 'c-mode-hook 'flycheck-mode)
 
-;; Flyspell
+;; Spelling
 (add-hook 'erc-mode-hook 'flyspell-mode)
 (add-hook 'org-mode-hook 'flyspell-mode)
 (add-hook 'gnus 'flyspell-mode)
@@ -163,10 +167,6 @@
 ;; fonts
 (add-to-list 'default-frame-alist '(font . "Hack-14" ))
 (set-face-attribute 'default t :font "Hack-14")
-
-;; no backups
-(setq make-backup-files nil) ; stop creating backup~ files
-(setq auto-save-default nil) ; stop creating #autosave# files
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
