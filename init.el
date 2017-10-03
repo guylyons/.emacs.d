@@ -183,7 +183,7 @@
  '(custom-safe-themes
    (quote
     ("3a5f04a517096b08b08ef39db6d12bd55c04ed3d43b344cf8bd855bde6d3a1ae" "e9460a84d876da407d9e6accf9ceba453e2f86f8b86076f37c08ad155de8223c" "125fd2180e880802ae98b85f282b17f0aa8fa6cb9fc4f33d7fb19a38c40acef0" "3b5ce826b9c9f455b7c4c8bff22c020779383a12f2f57bf2eb25139244bb7290" "9a155066ec746201156bb39f7518c1828a73d67742e11271e4f24b7b178c4710" "43c1a8090ed19ab3c0b1490ce412f78f157d69a29828aa977dae941b994b4147" "65d9573b64ec94844f95e6055fe7a82451215f551c45275ca5b78653d505bc42" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "4e4d9f6e1f5b50805478c5630be80cce40bee4e640077e1a6a7c78490765b03f" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "4486ade2acbf630e78658cd6235a5c6801090c2694469a2a2b4b0e12227a64b9" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "ff7625ad8aa2615eae96d6b4469fcc7d3d20b2e1ebc63b761a349bebbb9d23cb" default)))
- '(emmet-move-cursor-after-expanding t t)
+ '(emmet-move-cursor-after-expanding t)
  '(fci-rule-color "#37474f")
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
  '(hl-sexp-background-color "#1c1f26")
@@ -199,9 +199,11 @@
    (quote
     (".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" "dist" "public")))
  '(save-place t)
+ '(save-place-mode t)
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
+ '(uniquify-buffer-name-style nil nil (uniquify))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote
@@ -224,6 +226,9 @@
      (340 . "#fff59d")
      (360 . "#8bc34a"))))
  '(vc-annotate-very-old-color nil)
+ '(web-mode-code-indent-offset 2)
+ '(web-mode-enable-auto-expanding t)
+ '(web-mode-enable-current-element-highlight t)
  '(xterm-color-names
    ["#303030" "#D66F84" "#D79887" "#D49A8A" "#94B1A3" "#A8938C" "#989584" "#BAB2A9"])
  '(xterm-color-names-bright
