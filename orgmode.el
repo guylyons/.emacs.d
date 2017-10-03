@@ -6,6 +6,7 @@
 (org-clock-persistence-insinuate)
 
 (require 'org)
+
 (setq org-agenda-files (list "~/org/" "~/org/journal/"))
 (setq org-agenda-include-diary t)
 (setq org-clock-persist 'history)

@@ -4,7 +4,7 @@
 ;; Helm
 (require 'helm-config)
 (helm-mode 1)
-(helm-autoresize-mode 1)
+
 (setq helm-M-x-fuzzy-match t
       helm-recentf-fuzzy-match t) ;; optional fuzzy matching for helm-M-x
 (setq redisplay-dont-pause t)
@@ -24,14 +24,6 @@
 
 ;; dired will only ask once for deletion
 (setq dired-recursive-deletes 'always)
-
-;; Emacs backup settings
-(defun make-backup-file-name (FILE)
-  (let ((dirname (concat "~/.backups/emacs/"
-			 (format-time-string "%y/%m/%d/"))))
-    (if (not (file-exists-p dirname))
-	(make-directory dirname t))
-    (concat dirname (file-name-nondirectory FILE))))
 
 ;; remap for meta key in mac
 (setq mac-command-modifier 'meta)

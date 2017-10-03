@@ -36,22 +36,16 @@
 (setq make-backup-files nil) ; stop creating backup~ files
 (setq auto-save-default nil) ; stop creating #autosave# files
 
-(add-hook 'term-mode-hook (lambda()
-                (yas-minor-mode -1)))
+
 
 ;; Snippets
 (require 'yasnippet)
 (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
-
+(add-hook 'term-mode-hook (lambda()
+                (yas-minor-mode -1)))
 (yas-global-mode t)
 
-;; highlight symbol mode
-(require 'highlight-symbol)
-(global-set-key [(control f3)] 'highlight-symbol)
-(global-set-key [f3] 'highlight-symbol-next)
-(global-set-key [(shift f3)] 'highlight-symbol-prev)
-(global-set-key [(meta f3)] 'highlight-symbol-query-replace)
-
+;; some fan favorites
 (projectile-global-mode)
 (drag-stuff-global-mode)
 (autopair-global-mode)
@@ -65,7 +59,6 @@
 (require 'web-mode)
 (require 'autopair)
 (require 'dired+)
-(require 'sane-term)
 
 (require 'company)
 (require 'company-web-html)
@@ -80,6 +73,7 @@
                           (set (make-local-variable 'company-backends) '(company-web-html))
                           (company-mode t)))
 
+(require 'sane-term)
 ;; directory tracking for sane-term
 (set-variable 'dirtrack-list '("^.*[^ ]+:\\(.*\\)]" 1 nil))
 (dirtrack-mode 1)
@@ -90,12 +84,14 @@
   "Load a file in current user's configuration directory"
   (load-file (expand-file-name file user-init-dir)))
 
+;; emacs includes
 (load-user-file "personal.el")
+(load-user-file "keybindings.el")
 (load-user-file "javascript.el")
 (load-user-file "python.el")
-(load-user-file "keybindings.el")
 (load-user-file "orgmode.el")
 (load-user-file "ruby.el")
+(load-user-file "go.el")
 
 (when (memq window-system '(mac ns))
   (exec-path-from-shell-initialize))
@@ -187,6 +183,7 @@
  '(fci-rule-color "#37474f")
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
  '(hl-sexp-background-color "#1c1f26")
+ '(neo-show-hidden-files t)
  '(nrepl-message-colors
    (quote
     ("#183691" "#969896" "#a71d5d" "#969896" "#0086b3" "#795da3" "#a71d5d" "#969896")))

@@ -1,4 +1,5 @@
 # emacs .gitignore
+
 elpa
 lisp
 recentf
