@@ -50,3 +50,5 @@
    (sql . nil)
    (sqlite . t)))
 
+;; allow coding indentation in src blocks
+(setq org-src-tab-acts-natively t)

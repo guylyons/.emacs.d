@@ -42,16 +42,16 @@
 (global-set-key (kbd "C-4") 'helm-projectile-find-file)
 (global-set-key (kbd "C-8") 'helm-projectile-ack)
 (global-set-key (kbd "C-9") 'helm-projectile-ag)
-(global-set-key (kbd "C-`") 'kill-buffer)
+(global-set-key (kbd "C-`") 'kill-buffer-and-window)
 (global-set-key (kbd "C-!") 'eshell)
 
 (global-set-key [C-tab] 'previous-buffer)
 (global-set-key [M-tab] 'next-buffer)
 (global-set-key (kbd "C-0") 'other-window)
 
-(global-set-key (kbd "C-S-E") 'emmet-expand-line)
+(define-key web-mode-map (kbd "C-S-E") 'emmet-expand-line)
 (global-set-key (kbd "C-S-P") 'helm-projectile)
-(global-set-key (kbd "C-S-S") 'save-buffer)
+(global-set-key (kbd "C-S-S") 'helm-projectile-switch-project)
 (global-set-key (kbd "C-S-A") 'mark-whole-buffer)
 
 (global-set-key [C-M-tab] [alt-tab])

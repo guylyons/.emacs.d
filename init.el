@@ -119,6 +119,9 @@
 (add-hook 'org-mode-hook 'flyspell-mode)
 (add-hook 'gnus 'flyspell-mode)
 
+;; erc
+(setq erc-nick "cstls")
+
 ;; CSS
 (add-hook 'scss-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
 (add-hook 'scss-mode-hook 'drag-stuff-mode)
@@ -183,7 +186,7 @@
  '(fci-rule-color "#37474f")
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
  '(hl-sexp-background-color "#1c1f26")
- '(neo-show-hidden-files t)
+ '(neo-show-hidden-files nil)
  '(nrepl-message-colors
    (quote
     ("#183691" "#969896" "#a71d5d" "#969896" "#0086b3" "#795da3" "#a71d5d" "#969896")))
@@ -195,7 +198,6 @@
  '(projectile-globally-ignored-directories
    (quote
     (".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" "dist" "public")))
- '(save-place t)
  '(save-place-mode t)
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
