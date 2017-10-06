@@ -1,6 +1,6 @@
 #+TITLE:  Emacs Configuration File
 #+AUTHOR: Guy Lyons
-#+EMAIL:  guylyons@protonmail.com
+#+EMAIL:  init.guy@mailhero.io
 #+PROPERTY:    results silent
 #+PROPERTY:    header-args:sh  :tangle no
 #+PROPERTY:    tangle ~/.emacs.d/init.el

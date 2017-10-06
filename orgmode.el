@@ -52,3 +52,6 @@
 
 ;; allow coding indentation in src blocks
 (setq org-src-tab-acts-natively t)
+
+(require 'calfw-org)
+

@@ -69,3 +69,12 @@
 (global-set-key (kbd "C-s") 'save-buffer)
 
 (global-set-key (kbd "C-S-d") 'duplicate-line)
+
+(defun duplicate-line()
+  (interactive)
+  (beginning-of-line)
+  (set-mark)
+  (end-of-line)
+  (kill-ring-save)
+  (next-line)
+  (yank))
