@@ -121,6 +121,7 @@
 
 ;; erc
 (setq erc-nick "cstls")
+(add-hook 'erc-mode-hook 'visual-line-mode)
 
 ;; CSS
 (add-hook 'scss-mode-hook  'emmet-mode) ;; enable Emmet's css abbreviation.
@@ -178,14 +179,18 @@
    (vector "#4d4d4c" "#c82829" "#718c00" "#eab700" "#4271ae" "#8959a8" "#3e999f" "#d6d6d6"))
  '(cua-mode t nil (cua-base))
  '(cursor-type (quote bar))
- '(custom-enabled-themes (quote (rebecca)))
+ '(custom-enabled-themes (quote (zenburn)))
  '(custom-safe-themes
    (quote
-    ("3a5f04a517096b08b08ef39db6d12bd55c04ed3d43b344cf8bd855bde6d3a1ae" "e9460a84d876da407d9e6accf9ceba453e2f86f8b86076f37c08ad155de8223c" "125fd2180e880802ae98b85f282b17f0aa8fa6cb9fc4f33d7fb19a38c40acef0" "3b5ce826b9c9f455b7c4c8bff22c020779383a12f2f57bf2eb25139244bb7290" "9a155066ec746201156bb39f7518c1828a73d67742e11271e4f24b7b178c4710" "43c1a8090ed19ab3c0b1490ce412f78f157d69a29828aa977dae941b994b4147" "65d9573b64ec94844f95e6055fe7a82451215f551c45275ca5b78653d505bc42" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "4e4d9f6e1f5b50805478c5630be80cce40bee4e640077e1a6a7c78490765b03f" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "4486ade2acbf630e78658cd6235a5c6801090c2694469a2a2b4b0e12227a64b9" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "ff7625ad8aa2615eae96d6b4469fcc7d3d20b2e1ebc63b761a349bebbb9d23cb" default)))
- '(emmet-move-cursor-after-expanding t t)
+    ("67e998c3c23fe24ed0fb92b9de75011b92f35d3e89344157ae0d544d50a63a72" "b3775ba758e7d31f3bb849e7c9e48ff60929a792961a2d536edec8f68c671ca5" "5dc0ae2d193460de979a463b907b4b2c6d2c9c4657b2e9e66b8898d2592e3de5" "3a5f04a517096b08b08ef39db6d12bd55c04ed3d43b344cf8bd855bde6d3a1ae" "e9460a84d876da407d9e6accf9ceba453e2f86f8b86076f37c08ad155de8223c" "125fd2180e880802ae98b85f282b17f0aa8fa6cb9fc4f33d7fb19a38c40acef0" "3b5ce826b9c9f455b7c4c8bff22c020779383a12f2f57bf2eb25139244bb7290" "9a155066ec746201156bb39f7518c1828a73d67742e11271e4f24b7b178c4710" "43c1a8090ed19ab3c0b1490ce412f78f157d69a29828aa977dae941b994b4147" "65d9573b64ec94844f95e6055fe7a82451215f551c45275ca5b78653d505bc42" "bb08c73af94ee74453c90422485b29e5643b73b05e8de029a6909af6a3fb3f58" "1b8d67b43ff1723960eb5e0cba512a2c7a2ad544ddb2533a90101fd1852b426e" "82d2cac368ccdec2fcc7573f24c3f79654b78bf133096f9b40c20d97ec1d8016" "4e4d9f6e1f5b50805478c5630be80cce40bee4e640077e1a6a7c78490765b03f" "98cc377af705c0f2133bb6d340bf0becd08944a588804ee655809da5d8140de6" "4486ade2acbf630e78658cd6235a5c6801090c2694469a2a2b4b0e12227a64b9" "628278136f88aa1a151bb2d6c8a86bf2b7631fbea5f0f76cba2a0079cd910f7d" "06f0b439b62164c6f8f84fdda32b62fb50b6d00e8b01c2208e55543a6337433a" "ff7625ad8aa2615eae96d6b4469fcc7d3d20b2e1ebc63b761a349bebbb9d23cb" default)))
+ '(display-battery-mode t)
+ '(emmet-move-cursor-after-expanding t)
  '(fci-rule-color "#37474f")
  '(flycheck-color-mode-line-face-to-color (quote mode-line-buffer-id))
+ '(fringe-mode 0 nil (fringe))
  '(hl-sexp-background-color "#1c1f26")
+ '(indicate-empty-lines t)
+ '(linum-format "%d ")
  '(neo-show-hidden-files nil)
  '(nrepl-message-colors
    (quote
@@ -202,6 +207,7 @@
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil)
+ '(tooltip-mode nil)
  '(uniquify-buffer-name-style nil nil (uniquify))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
