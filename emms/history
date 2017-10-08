@@ -1,0 +1,9 @@
+;;; emms history -*- mode: emacs-lisp; coding: utf-8; -*-
+(
+;; active playlist
+" *EMMS Playlist*"
+;; playlists: ((BUFFER_NAME SELECT_POSITION TRACKS) ...)
+((" *EMMS Playlist*" 1 ((*track* (type . file) (name . "/Users/guylyons/Music/iTunes/iTunes Media/Music/Aphex Twin/Syro/01 Minipops 67 (Source Field Mix).mp3") (metadata)))))
+;; play method
+((emms-repeat-track) (emms-repeat-playlist))
+)
