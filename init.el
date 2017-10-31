@@ -138,15 +138,15 @@
 (add-hook 'web-mode-hook 'emmet-mode)
 (add-hook 'web-mode-hook 'drag-stuff-mode)
 (add-hook 'web-mode-hook 'linum-mode)
+
+;; mime type associations
 (add-to-list 'auto-mode-alist '("\\.[gj]sp\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.as[cp]x\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.mustache\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.php\\'" . web-mode))
-(add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.scss\\'" . scss-mode))
 (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))
 
@@ -156,16 +156,17 @@
   "Hooks for Web mode."
   (setq web-mode-code-indent-offset 4)
   (setq web-mode-css-indent-offset 2)
-  (setq web-mode-markup-indent-offset 4)
-  )
+  (setq web-mode-markup-indent-offset 4))
+
 (with-eval-after-load 'scss-mode
   (define-key scss-mode-map (kbd "C-c u") 'helm-css-scss))
 
 (defvar css-indent-offset 2)
 
 ;; fonts
-(add-to-list 'default-frame-alist '(font . "Hack-14" ))
-(set-face-attribute 'default t :font "Hack-14")
+(add-to-list 'default-frame-alist '(font . "Source Code Pro-14" ))
+(set-face-attribute 'default t :font "Source Code Pro-14")
 
+;; save customize-variable
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)

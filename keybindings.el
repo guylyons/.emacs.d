@@ -14,7 +14,7 @@
 (global-set-key (kbd "M-SPC") 'set-mark-command)
 
 (global-set-key (kbd "C-c n")
-		(lambda () (interactive) (find-file "~/org/notes.org")))
+                (lambda () (interactive) (find-file "~/org/notes.org")))
 (set-register ?o (cons 'file "~/org/notes.org"))
 (add-hook 'org-mode-hook 'org-password-manager-key-bindings)
 
@@ -51,7 +51,7 @@
 
 (define-key web-mode-map (kbd "C-S-E") 'emmet-expand-line)
 (global-set-key (kbd "C-S-P") 'helm-projectile)
-(global-set-key (kbd "C-S-S") 'helm-projectile-switch-project)
+(global-set-key (kbd "C-S-W") 'helm-projectile-switch-project)
 (global-set-key (kbd "C-S-A") 'mark-whole-buffer)
 
 (global-set-key [C-M-tab] [alt-tab])
@@ -66,15 +66,3 @@
 (global-set-key (kbd "C-S-O") 'delete-other-windows)
 
 (global-set-key (kbd "C-S-W") 'whitespace-cleanup)
-(global-set-key (kbd "C-s") 'save-buffer)
-
-(global-set-key (kbd "C-S-d") 'duplicate-line)
-
-(defun duplicate-line()
-  (interactive)
-  (beginning-of-line)
-  (set-mark)
-  (end-of-line)
-  (kill-ring-save)
-  (next-line)
-  (yank))

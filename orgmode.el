@@ -1,8 +1,5 @@
 ;; orgmode.el
 
-(add-hook 'org-journal-mode-hook 'org-mode)
-(add-hook 'text-mode-hook 'turn-on-visual-line-mode)
-
 (org-clock-persistence-insinuate)
 
 (require 'org)
@@ -29,29 +26,26 @@
 (add-hook 'org-journal-mode-hook 'visual-fill-column-mode)
 (add-hook 'org-journal-mode-hook 'writegood-mode)
 
-;; babel
+; ;; babel
 
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((R . t)
-   (ditaa . t)
-   (dot . t)
-   (emacs-lisp . t)
-   (gnuplot . t)
-   (haskell . nil)
-   (latex . t)
-   (ledger . t)         ;this is the important one for this tutorial
-   (ocaml . nil)
-   (octave . t)
-   (python . t)
-   (ruby . t)
-   (screen . nil)
-   (sh . t)
-   (sql . nil)
-   (sqlite . t)))
+; (org-babel-do-load-languages
+;  'org-babel-load-languages
+;  '((R . t)
+;    (ditaa . t)
+;    (dot . t)
+;    (emacs-lisp . t)
+;    (gnuplot . t)
+;    (haskell . nil)
+;    (latex . t)
+;    (ledger . t)         ;this is the important one for this tutorial
+;    (ocaml . nil)
+;    (octave . t)
+;    (python . t)
+;    (ruby . t)
+;    (screen . nil)
+;    (sh . t)
+;    (sql . nil)
+;    (sqlite . t)))
 
 ;; allow coding indentation in src blocks
 (setq org-src-tab-acts-natively t)
-
-(require 'calfw-org)
-
