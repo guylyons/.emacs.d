@@ -18,23 +18,17 @@
 (set-register ?o (cons 'file "~/org/notes.org"))
 (add-hook 'org-mode-hook 'org-password-manager-key-bindings)
 
-(global-set-key (kbd "C-x T") 'sane-term-create)
-(global-set-key (kbd "C-x t") 'sane-term)
-
-(global-set-key (kbd "C-x p") 'helm-projectile)
+(global-set-key (kbd "C-c p") 'helm-projectile)
 (global-set-key (kbd "C-c >") 'calendar)
-(global-set-key (kbd "C-x w r") 'writeroom-mode)
-(global-set-key (kbd "C-c s") 'helm-css-scss)
-(global-set-key (kbd "C-c h") 'helm-projectile)
+(define-key scss-mode-map (kbd "C-c s") 'helm-css-scss)
 
 (global-set-key (kbd "C-c g") 'xah-lookup-google)
-
-(global-set-key (kbd "<f2>") 'calculator)
-(global-set-key (kbd "<f3>") 'sane-term)
 
 (global-set-key (kbd "C-t") 'swiper)
 (global-set-key (kbd "C-c C-p") 'list-packages)
 (global-set-key (kbd "C-c C-e") 'erc)
+(global-set-key (kbd "C-c m") 'magit-status)
+(global-set-key (kbd "C-S-S") 'save-buffer)
 
 (global-set-key (kbd "C-1") 'helm-find-files)
 (global-set-key (kbd "C-2") 'helm-mini)
@@ -45,11 +39,19 @@
 (global-set-key (kbd "C-`") 'kill-buffer-and-window)
 (global-set-key (kbd "C-!") 'eshell)
 
+(global-set-key (kbd "C-s") 'swiper) (global-set-key (kbd "M-x") 'counsel-M-x) (global-set-key (kbd "C-x C-f") 'counsel-find-file) (global-set-key (kbd "<f1> f") 'counsel-describe-function) (global-set-key (kbd "<f1> v") 'counsel-describe-variable) (global-set-key (kbd "<f1> l") 'counsel-find-library) (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol) (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+
+(global-set-key (kbd "C-c g") 'counsel-git) (global-set-key (kbd "C-c j") 'counsel-git-grep) (global-set-key (kbd "C-c k") 'counsel-ag) (global-set-key (kbd "C-x l") 'counsel-locate) (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+
+
 (global-set-key [C-tab] 'previous-buffer)
 (global-set-key [M-tab] 'next-buffer)
 (global-set-key (kbd "C-0") 'other-window)
 
 (define-key web-mode-map (kbd "C-S-E") 'emmet-expand-line)
+
 (global-set-key (kbd "C-S-P") 'helm-projectile)
 (global-set-key (kbd "C-S-W") 'helm-projectile-switch-project)
 (global-set-key (kbd "C-S-A") 'mark-whole-buffer)

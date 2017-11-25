@@ -48,7 +48,11 @@
 (drag-stuff-global-mode)
 (autopair-global-mode)
 (global-hl-line-mode)
+
 (ivy-mode 1)
+(ivy-set-occur 'swiper 'swiper-occur)
+
+
 (add-hook 'after-init-hook 'global-company-mode)
 (global-subword-mode 1)
 
