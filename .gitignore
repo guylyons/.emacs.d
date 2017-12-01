@@ -15,3 +15,4 @@ auto-save-list
 smex-items
 abbrev_defs
 org-clock-save.el
+*.cache
