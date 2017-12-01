@@ -11,7 +11,7 @@
 
 (global-set-key (kbd "C-S-D") 'helm-projectile-find-file-dwim)
 
-(global-set-key (kbd "M-SPC") 'set-mark-command)
+(global-set-key (kbd "C-c s") 'set-mark-command)
 
 (global-set-key (kbd "C-c n")
                 (lambda () (interactive) (find-file "~/org/notes.org")))
@@ -28,8 +28,10 @@
 (global-set-key (kbd "C-c C-p") 'list-packages)
 (global-set-key (kbd "C-c C-e") 'erc)
 (global-set-key (kbd "C-c m") 'magit-status)
+(global-set-key (kbd "C-6") 'magit-stage)
 (global-set-key (kbd "C-S-S") 'save-buffer)
 
+;; helm keybindings
 (global-set-key (kbd "C-1") 'helm-find-files)
 (global-set-key (kbd "C-2") 'helm-mini)
 (global-set-key (kbd "C-3") 'helm-projectile)
@@ -39,7 +41,8 @@
 (global-set-key (kbd "C-`") 'kill-buffer-and-window)
 (global-set-key (kbd "C-!") 'eshell)
 
-(global-set-key (kbd "C-s") 'swiper) (global-set-key (kbd "M-x") 'counsel-M-x) (global-set-key (kbd "C-x C-f") 'counsel-find-file) (global-set-key (kbd "<f1> f") 'counsel-describe-function) (global-set-key (kbd "<f1> v") 'counsel-describe-variable) (global-set-key (kbd "<f1> l") 'counsel-find-library) (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol) (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+;; ivy keybindings
+(global-set-key (kbd "C-s") 'swiper) (global-set-key (kbd "C-x C-f") 'counsel-find-file) (global-set-key (kbd "<f1> f") 'counsel-describe-function) (global-set-key (kbd "<f1> v") 'counsel-describe-variable) (global-set-key (kbd "<f1> l") 'counsel-find-library) (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol) (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
 
 (global-set-key (kbd "C-c g") 'counsel-git) (global-set-key (kbd "C-c j") 'counsel-git-grep) (global-set-key (kbd "C-c k") 'counsel-ag) (global-set-key (kbd "C-x l") 'counsel-locate) (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
 

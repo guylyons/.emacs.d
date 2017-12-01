@@ -165,7 +165,7 @@
 (with-eval-after-load 'scss-mode
   (define-key scss-mode-map (kbd "C-c u") 'helm-css-scss))
 
-(defvar css-indent-offset 2)
+(setq css-indent-offset 2)
 
 ;; fonts
 (add-to-list 'default-frame-alist '(font . "Source Code Pro-14" ))
