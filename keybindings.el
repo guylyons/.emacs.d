@@ -36,13 +36,13 @@
 (global-set-key (kbd "C-2") 'helm-mini)
 (global-set-key (kbd "C-3") 'helm-projectile)
 (global-set-key (kbd "C-4") 'helm-projectile-find-file)
-(global-set-key (kbd "C-8") 'helm-projectile-ack)
-(global-set-key (kbd "C-9") 'helm-projectile-ag)
+(global-set-key (kbd "C-5") 'helm-projectile-ack)
+(global-set-key (kbd "C-6") 'helm-projectile-ag)
 (global-set-key (kbd "C-`") 'kill-buffer-and-window)
 (global-set-key (kbd "C-!") 'eshell)
 
 ;; ivy keybindings
-(global-set-key (kbd "C-s") 'swiper) (global-set-key (kbd "C-x C-f") 'counsel-find-file) (global-set-key (kbd "<f1> f") 'counsel-describe-function) (global-set-key (kbd "<f1> v") 'counsel-describe-variable) (global-set-key (kbd "<f1> l") 'counsel-find-library) (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol) (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file) (global-set-key (kbd "<f1> f") 'counsel-describe-function) (global-set-key (kbd "<f1> v") 'counsel-describe-variable) (global-set-key (kbd "<f1> l") 'counsel-find-library) (global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol) (global-set-key (kbd "<f2> u") 'counsel-unicode-char)
 
 (global-set-key (kbd "C-c g") 'counsel-git) (global-set-key (kbd "C-c j") 'counsel-git-grep) (global-set-key (kbd "C-c k") 'counsel-ag) (global-set-key (kbd "C-x l") 'counsel-locate) (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
 
@@ -71,3 +71,17 @@
 (global-set-key (kbd "C-S-O") 'delete-other-windows)
 
 (global-set-key (kbd "C-S-W") 'whitespace-cleanup)
+
+;; xah fly keys for my rsi
+
+(require 'xah-fly-keys)
+
+(xah-fly-keys-set-layout "qwerty") ; required if you use qwerty
+;; (xah-fly-keys-set-layout "workman") ; required if you use workman
+;; (xah-fly-set-layout "dvorak") ; by default, it's dvorak
+
+(xah-fly-keys 1)
+
+(require 'which-key)
+(which-key-mode)
+
