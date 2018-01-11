@@ -78,10 +78,10 @@
 (define-key xah-fly-leader-key-map (kbd "p") 'helm-projectile-find-file-dwim)
 (define-key xah-fly-leader-key-map (kbd "]") 'magit-status)
 
-(add-hook 'xah-fly-command-mode-activate-hook 'xah-fly-save-buffer-if-file)
+(add-hook 'after-save-hook 'xah-fly-command-mode-activate)
 
 (defun hl-line-mode-on () (global-hl-line-mode 1))
 (defun hl-line-mode-off () (global-hl-line-mode 0))
 
-(add-hook 'xah-fly-command-mode-activate-hook 'hl-line-mode-on)
-(add-hook 'xah-fly-insert-mode-activate-hook  'hl-line-mode-off)
+(add-hook 'xah-fly-command-mode-activate-hook 'hl-line-mode-off)
+(add-hook 'xah-fly-insert-mode-activate-hook  'hl-line-mode-on)
