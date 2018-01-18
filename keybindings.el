@@ -38,7 +38,7 @@
 (global-set-key (kbd "<f5>") 'helm-projectile-ack)
 (global-set-key (kbd "<f4>") 'helm-projectile-find-file)
 (global-set-key (kbd "<f6>") 'helm-projectile-ag)
-(global-set-key (kbd "C-`") 'kill-buffer-and-window)
+;;(global-set-key (kbd "C-`") 'kill-buffer-and-window)
 (global-set-key (kbd "C-!") 'eshell)
 
 ;; ivy keybindings
@@ -73,15 +73,18 @@
 (global-set-key (kbd "C-S-W") 'whitespace-cleanup)
 
 (define-key xah-fly-key-map (kbd "a") 'helm-M-x)
+
+(define-key xah-fly-leader-key-map (kbd "b") 'helm-buffers-list)
 (define-key xah-fly-leader-key-map (kbd "RET") 'helm-M-x)
 (define-key xah-fly-leader-key-map (kbd "f") 'helm-find-files)
 (define-key xah-fly-leader-key-map (kbd "p") 'helm-projectile-find-file-dwim)
 (define-key xah-fly-leader-key-map (kbd "]") 'magit-status)
 
 (add-hook 'after-save-hook 'xah-fly-command-mode-activate)
+(global-set-key (kbd "C-`") 'xah-fly-command-mode-activate)
 
 (defun hl-line-mode-on () (global-hl-line-mode 1))
 (defun hl-line-mode-off () (global-hl-line-mode 0))
 
-(add-hook 'xah-fly-command-mode-activate-hook 'hl-line-mode-off)
-(add-hook 'xah-fly-insert-mode-activate-hook  'hl-line-mode-on)
+(add-hook 'xah-fly-command-mode-activate-hook 'hl-line-mode-on)
+(add-hook 'xah-fly-insert-mode-activate-hook  'hl-line-mode-off)
