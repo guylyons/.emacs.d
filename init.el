@@ -53,7 +53,7 @@
 ;; some fan favorites
 (projectile-global-mode)
 (drag-stuff-global-mode)
-(autopair-global-mode)
+;;(autopair-global-mode)
 (global-hl-line-mode)
 
 (ivy-mode 1)

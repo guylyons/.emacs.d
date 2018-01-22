@@ -72,8 +72,7 @@
 
 (global-set-key (kbd "C-S-W") 'whitespace-cleanup)
 
-(define-key xah-fly-key-map (kbd "a") 'helm-M-x)
-
+(define-key xah-fly-key-map (kbd "a") 'helm-buffers-list)
 (define-key xah-fly-leader-key-map (kbd "b") 'helm-buffers-list)
 (define-key xah-fly-leader-key-map (kbd "RET") 'helm-M-x)
 (define-key xah-fly-leader-key-map (kbd "f") 'helm-find-files)
@@ -81,6 +80,7 @@
 (define-key xah-fly-leader-key-map (kbd "]") 'magit-status)
 
 (add-hook 'after-save-hook 'xah-fly-command-mode-activate)
+
 (global-set-key (kbd "C-`") 'xah-fly-command-mode-activate)
 
 (defun hl-line-mode-on () (global-hl-line-mode 1))
