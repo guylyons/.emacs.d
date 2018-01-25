@@ -14,5 +14,7 @@ eshell
 auto-save-list
 smex-items
 abbrev_defs
+emms
 org-clock-save.el
+places
 *.cache
