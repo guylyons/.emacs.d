@@ -91,7 +91,7 @@
 
 ;;Exit insert mode by pressing j and then j quickly
 (setq key-chord-two-keys-delay 0.5)
-(key-chord-define-global "fa" 'xah-fly-command-mode-activate)
+(key-chord-define-global "jj" 'xah-fly-command-mode-activate)
 (key-chord-define-global "pp" 'helm-projectile)
 (key-chord-define-global "ff" 'helm-find-files)
 (key-chord-define-global "bl" 'helm-buffers-list)
