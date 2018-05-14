@@ -32,13 +32,10 @@
 (global-set-key (kbd "C-S-S") 'save-buffer)
 
 ;; helm keybindings
-;;(global-set-key (kbd "C-1") 'helm-find-files)
-;;(global-set-key (kbd "C-2") 'helm-mini)
 (global-set-key (kbd "<f3>") 'helm-projectile)
 (global-set-key (kbd "<f5>") 'helm-projectile-ack)
 (global-set-key (kbd "<f4>") 'helm-projectile-find-file)
 (global-set-key (kbd "<f6>") 'helm-projectile-ag)
-;;(global-set-key (kbd "C-`") 'kill-buffer-and-window)
 (global-set-key (kbd "C-!") 'eshell)
 
 ;; ivy keybindings
@@ -76,12 +73,11 @@
 (define-key xah-fly-leader-key-map (kbd "b") 'helm-buffers-list)
 (define-key xah-fly-leader-key-map (kbd "RET") 'helm-M-x)
 (define-key xah-fly-leader-key-map (kbd "f") 'helm-find-files)
+(define-key xah-fly-leader-key-map (kbd "s") 'swiper)
 (define-key xah-fly-leader-key-map (kbd "p") 'helm-projectile-find-file-dwim)
 (define-key xah-fly-leader-key-map (kbd "]") 'magit-status)
 
 (add-hook 'after-save-hook 'xah-fly-command-mode-activate)
-
-(global-set-key (kbd "C-`") 'xah-fly-command-mode-activate)
 
 (defun hl-line-mode-on () (global-hl-line-mode 1))
 (defun hl-line-mode-off () (global-hl-line-mode 0))
@@ -93,9 +89,7 @@
 (setq key-chord-two-keys-delay 0.5)
 (key-chord-define-global "jj" 'xah-fly-command-mode-activate)
 (key-chord-define-global "pp" 'helm-projectile)
-(key-chord-define-global "ff" 'helm-find-files)
-(key-chord-define-global "bl" 'helm-buffers-list)
 (key-chord-mode 1)
 
+;; Open NeoTree when opening a new project in Projectile
 (add-hook 'projectile-after-switch-project-hook 'neotree)
-
