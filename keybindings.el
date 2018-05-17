@@ -69,6 +69,8 @@
 
 (global-set-key (kbd "C-S-W") 'whitespace-cleanup)
 
+(global-set-key (kbd "C-a") 'beginning-of-line)
+
 (define-key xah-fly-key-map (kbd "a") 'helm-buffers-list)
 (define-key xah-fly-leader-key-map (kbd "b") 'helm-buffers-list)
 (define-key xah-fly-leader-key-map (kbd "RET") 'helm-M-x)
